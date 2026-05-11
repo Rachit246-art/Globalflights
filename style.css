@@ -152,6 +152,23 @@ main {
 
 .hero-text-content {
     text-align: left;
+    margin-top: -40px; /* Shifted upward */
+}
+
+.hero-logo-container {
+    margin-bottom: 1.5rem;
+    animation: fadeIn 0.8s var(--ease) 0.1s both;
+}
+
+.hero-logo {
+    height: 110px; /* Made bigger */
+    width: auto;
+    filter: drop-shadow(0 8px 25px rgba(255, 138, 0, 0.15)) drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+    transition: all 0.4s var(--ease);
+}
+
+.hero-logo:hover {
+    transform: scale(1.02);
 }
 
 .hero-image-content {
@@ -195,7 +212,6 @@ main {
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 3px;
-    text-transform: uppercase;
     color: var(--orange-400);
     margin-bottom: 1rem;
     animation: fadeIn 0.8s var(--ease) 0.3s both;
@@ -208,7 +224,6 @@ h1 {
     line-height: 1.1;
     letter-spacing: -2px;
     margin-bottom: 1.5rem;
-    text-transform: uppercase;
     animation: fadeInUp 0.8s var(--ease) 0.4s both;
 }
 
