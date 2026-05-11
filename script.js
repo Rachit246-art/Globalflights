@@ -8,13 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let particles = [];
     let animFrame;
 
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
     class Particle {
         constructor() {
             this.reset();
@@ -45,6 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fill();
         }
     }
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        // Re-create particles on major resize to keep density consistent
+        particles = [];
+        const count = Math.min(80, Math.floor(window.innerWidth / 15));
+        for (let i = 0; i < count; i++) {
+            particles.push(new Particle());
+        }
+    }
+    resize();
+    window.addEventListener('resize', resize);
 
     // Create particles
     const count = Math.min(80, Math.floor(window.innerWidth / 15));

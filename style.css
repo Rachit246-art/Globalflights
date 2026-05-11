@@ -31,7 +31,7 @@ html, body { height: 100%; }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg-primary);
+    background: transparent;
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -43,9 +43,14 @@ body {
 /* ─── Animated Background Scene ─── */
 .bg-scene {
     position: fixed;
-    inset: 0;
-    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 1;
+    background: var(--bg-primary);
     overflow: hidden;
+    pointer-events: none;
 }
 
 .bg-scene::before {
@@ -63,8 +68,8 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, var(--bg-primary) 0%, transparent 60%),
-                linear-gradient(to top, var(--bg-primary) 0%, transparent 30%);
+    background: linear-gradient(to right, var(--bg-primary) 0%, transparent 80%),
+                linear-gradient(to top, var(--bg-primary) 0%, transparent 40%);
 }
 
 .gradient-orb {
@@ -157,16 +162,16 @@ main {
 .pill-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: var(--white-10);
-    border: 1px solid var(--border-subtle);
-    padding: 6px 18px 6px 12px;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 24px 8px 16px;
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--white-80);
-    letter-spacing: 0.5px;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 2.5rem;
     backdrop-filter: blur(8px);
     animation: fadeIn 0.8s var(--ease) 0.2s both;
 }
@@ -198,11 +203,12 @@ main {
 
 /* Heading */
 h1 {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -1px;
-    margin-bottom: 1.25rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
     animation: fadeInUp 0.8s var(--ease) 0.4s both;
 }
 
@@ -241,16 +247,16 @@ h1 {
 .input-wrap input {
     width: 100%;
     height: 100%;
-    padding: 0.9rem 1.1rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
+    padding: 1.1rem 1.4rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-md);
     color: var(--white);
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: 1rem;
     outline: none;
     transition: all 0.3s var(--ease);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(12px);
 }
 
 .input-wrap input::placeholder { color: var(--white-30); }
@@ -324,12 +330,13 @@ h1 {
 .trust-item {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
-    color: var(--white-30);
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--white-80);
+    font-weight: 500;
 }
 
-.trust-item svg { stroke: var(--white-30); flex-shrink: 0; }
+.trust-item svg { stroke: var(--white-80); flex-shrink: 0; opacity: 0.8; }
 
 /* ─── Preview Section ─── */
 .preview-container {
@@ -435,8 +442,10 @@ footer {
     .btn-notify { width: 100%; justify-content: center; }
 
     .trust-row {
-        flex-direction: column;
-        gap: 0.75rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        justify-content: center;
         align-items: center;
     }
 
