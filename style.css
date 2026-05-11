@@ -152,7 +152,7 @@ main {
 
 .hero-text-content {
     text-align: left;
-    margin-top: -40px; /* Shifted upward */
+    margin-top: -100px; /* Shifted further upward to reduce top space */
 }
 
 .hero-logo-container {
