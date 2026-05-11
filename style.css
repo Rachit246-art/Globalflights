@@ -161,7 +161,7 @@ main {
 }
 
 .hero-logo {
-    height: 110px; /* Made bigger */
+    height: 160px; /* Significantly larger to be highlighted */
     width: auto;
     filter: drop-shadow(0 8px 25px rgba(255, 138, 0, 0.15)) drop-shadow(0 4px 10px rgba(0,0,0,0.5));
     transition: all 0.4s var(--ease);
@@ -448,6 +448,7 @@ footer {
 @media (max-width: 700px) {
     header { padding: 1.2rem 5%; }
     .main-logo { height: 60px; }
+    .hero-logo { height: 100px; }
     main { padding: 2rem 6% 4rem; }
 
     .notify-form .form-row {
